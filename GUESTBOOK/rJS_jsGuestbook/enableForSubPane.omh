@@ -1,0 +1,2 @@
+Do $cinst.$objs.tabStrip.$enabled.$assign(pEnable)
+Do $cinst.$objs.aboutBtn.$enabled.$assign(pEnable)

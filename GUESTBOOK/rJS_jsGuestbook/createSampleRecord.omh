@@ -1,0 +1,12 @@
+;  will be used if no record is in the database
+Calculate iGuestbookRow.ID as iGuestbookList.$cols.ID.$maximum()+1
+Calculate iGuestbookRow.Name as 'User1'
+Calculate iGuestbookRow.EMail as 'User1@gmail.com'
+Calculate iGuestbookRow.CommentDate as #D
+Calculate iGuestbookRow.Comment as 'This is a first sample comment in your guestbook.'
+
+Do method readBinFile (iDefaultPicturePath,iDefaultPic)     ;; get default photo
+Calculate iGuestbookRow.Photo as iDefaultPic
+
+Do iGuestbookRow.$insert() Returns #F
+Do iGuestbookRow.$clear()

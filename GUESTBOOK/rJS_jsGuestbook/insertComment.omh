@@ -1,0 +1,18 @@
+Calculate iGuestbookRow.ID as iGuestbookList.$cols.ID.$maximum()+1
+Calculate iGuestbookRow.Name as iName
+Calculate iGuestbookRow.EMail as iEMail
+Calculate iGuestbookRow.CommentDate as #D
+Calculate iGuestbookRow.Comment as iComment
+
+If not(isnull(iPicture))
+	Do pictformat(iPicture) Returns lPicFormat     ;; find the format
+	If not(lPicFormat='PNG')
+		Do pictconvto(lPicFormat,iPicture,"PNG") Returns lBinary     ;; save in png format
+	End If
+Else
+	Calculate iPicture as #NULL
+End If
+Calculate iGuestbookRow.Photo as iPicture
+
+Do iGuestbookRow.$insert() Returns #F
+Do iGuestbookRow.$clear()

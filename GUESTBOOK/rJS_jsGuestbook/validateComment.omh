@@ -1,0 +1,19 @@
+If len(iName)
+Else
+	Do $cinst.$showmessage('Please enter your name.')
+	Quit method kFalse
+End If
+
+If len(iEMail)&pos('@',iEMail)
+Else
+	Do $cinst.$showmessage('Please enter a correct E-Mail address.')
+	Quit method kFalse
+End If
+
+If len(iComment)
+Else
+	Do $cinst.$showmessage('Please enter a comment.')
+	Quit method kFalse
+End If
+
+Quit method kTrue

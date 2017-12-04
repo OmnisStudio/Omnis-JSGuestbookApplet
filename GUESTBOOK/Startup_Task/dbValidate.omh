@@ -1,0 +1,13 @@
+Do lTablesForAppList.$define(lTableName,lSchemaClassName)
+Do $schemas.$appendlist(lTablesForAppList,$ref.$servertablename,$ref.$name)     ;; loads all schemas into the list with all servertablenames used there
+Do tSQLObj.$getTables() Returns lDBTableList     ;; loads the existing tables from the db
+
+For lTablesForAppList.$line from 1 to lTablesForAppList.$linecount() step 1
+	Do lTablesForAppList.$loadcols()     ;; loads the current line of the list into the corresponding variables that are used as column definition
+	Do lDBTableList.$search(lDBTableList.TableOrViewName=lTableName,kTrue,kFalse,kFalse,kFalse)
+	If not(lDBTableList.$line)     ;; if this table is not yet available in the db
+		Do lRow.$definefromsqlclass(lSchemaClassName)     ;; define the row using the schema class
+		Do lRow.$sessionobject.$assign(tSQLObj)     ;; use the database session object
+		Do tSQLObj.$createTable(lRow) Returns lStatus     ;; and finally create the server table there
+	End If
+End For

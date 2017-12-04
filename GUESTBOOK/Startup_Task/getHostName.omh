@@ -1,0 +1,2 @@
+Do FileOps.$splitpathname(sys(10),lDrive,lDir,lFile,lExt)
+Quit method con(lDrive,lDir,lFile,'.db')

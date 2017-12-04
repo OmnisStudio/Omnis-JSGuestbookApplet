@@ -1,0 +1,10 @@
+Do iGuestbookList.$definefromsqlclass('sGuestbook')
+Do iGuestbookList.$sessionobject.$assign(iSQLObjRef)
+
+Do iGuestbookList.$select()
+Do iGuestbookList.$fetch(kFetchAll)
+
+If iGuestbookList.$linecount=0
+	Do method createSampleRecord
+	Do method buildGuestbookList
+End If

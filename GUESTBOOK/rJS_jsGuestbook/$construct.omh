@@ -1,0 +1,20 @@
+
+Do method setup
+
+Do iFileRow.$define(MimeList,"Binary Variable")
+Calculate iFileRow.C2 as "tData"
+
+Calculate iSep as '/'
+
+Calculate iPicPath as con("images",iSep,"applets",iSep,"omnis_guestbook_banner1.png")
+Calculate iSplashPath as con("images",iSep,"applets",iSep,"welcome_guestbook_big1.png")
+
+Do $itasks.[$clib().$name].$getSess Returns iSQLObjRef
+
+Do iGuestbookRow.$sessionobject.$assign(iSQLObjRef)
+Do method buildGuestbookList
+
+;  Breakpoint
+;  Calculate row as iGuestbookList.1
+;  Calculate pic as row.Photo
+;  Calculate pic2 as iGuestbookList.2.Photo

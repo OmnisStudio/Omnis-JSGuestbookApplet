@@ -1,0 +1,19 @@
+Begin text block
+Text: {Guestbook is an Omnis applet developed using the Javascript controls} (Carriage return)
+Text: (Carriage return)
+Text: {Function:} (Carriage return)
+Text: {The applet allows you to write and display guestbook comments} (Carriage return)
+Text: (Carriage return)
+Text: {Usage:} (Carriage return)
+Text: {Click on the Sign tab to begin data entry.  Once you have saved your comment, it is added to the list.} (Carriage return)
+Text: (Carriage return)
+Text: {Components:} (Carriage return)
+Text: {The guestbook data is stored in a SQLite table called Guestbook.  The schema class sGuestbook is an Omnis representation of the table definition.} (Carriage return)
+Text: (Carriage return)
+Text: {The applet uses the built-in SQL list function $insert to populate the table.} (Carriage return,Linefeed)
+Text: (Carriage return)
+Text: {Extending:} (Carriage return)
+Text: {The applet could be extended with an admin area which allows you to edit or delete comments.  You could also add a date or user filter.} (Carriage return)
+End text block
+Get text block lAboutText
+Quit method lAboutText

@@ -1,0 +1,7 @@
+On evClick
+	Do method validateComment Returns lOK
+	If lOK
+		Do method insertComment
+		Do method buildGuestbookList
+		Do $cinst.$objs.tabStrip.$currenttab.$assign(1)
+	End If

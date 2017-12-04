@@ -1,0 +1,7 @@
+On evTabSelected
+	Calculate iCurrTab as pTabNumber
+	
+	If pTabNumber=2
+		Do method initialiseRecord
+		Do $cinst.$setcurfield($cinst.$objs.pagedPane.$objs.insertName)
+	End If

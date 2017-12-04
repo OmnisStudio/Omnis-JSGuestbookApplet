@@ -1,0 +1,4 @@
+Calculate iName as
+Calculate iEMail as
+Calculate iComment as
+Do method readBinFile (iDefaultPicturePath,iPicture)
